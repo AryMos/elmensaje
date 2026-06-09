@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bunker.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plazo Expirado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="container" style="max-width: 500px;">
+        <div class="card p-4 text-center border-danger shadow-sm">
+            <h1 class="text-danger h4 mb-3">⚠️ Notificación de Expiración</h1>
+            <p class="small text-muted">El sistema de monitoreo automatizado completó el ciclo de verificación sin registrar reportes de actividad.</p>
+            
+            <div class="alert alert-danger fw-bold py-2 my-3">
+                PLAZO DE GRACIA EXHAURIDO
+            </div>
+
+            <p class="small">El periodo complementario de 10 días finalizó. Siguiendo las directivas de seguridad contractual del sistema, los registros fueron liberados y los códigos de acceso ya se encuentran a disposición de los destinatarios.</p>
+            
+            <div class="text-muted mt-4" style="font-size: 11px;">
+                El Mensaje - Protocolo de Cierre Automático
+            </div>
+        </div>
+    </div>
+</body>
+</html>

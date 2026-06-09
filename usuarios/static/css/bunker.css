@@ -1,0 +1,145 @@
+/* 1. CONFIGURACIÓN GENERAL PROFESIONAL */
+body {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* 2. TIPOGRAFÍAS Y COLORES DE TEXTO UNIFORMES */
+h1, h2, h3, h4, h5, h6, .display-4, .h2, .h3 {
+  color: #0f172a !important; /* Azul marino profundo */
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+p, span, label, .form-label {
+  color: #475569 !important; /* Gris intermedio legible */
+}
+
+/* 3. TARJETAS (Estructura de Bloques Limpios) */
+.card, .card.shadow, .modal-content {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.card-header {
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Tablas de Datos Uniformes */
+.table {
+  color: #334155 !important;
+  background-color: #ffffff !important;
+}
+.table th {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+td, th {
+  border-color: #e2e8f0 !important;
+}
+
+/* 4. COMPONENTES DE FORMULARIO (Inputs Modernos) */
+input[type="text"], input[type="email"], input[type="password"], datetime-local, textarea, select, .form-control, .form-select {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+input:focus, textarea:focus, select:focus, .form-control:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+  outline: none !important;
+}
+
+/* 5. BOTONES CORPORATIVOS (Efecto Mecánico Táctil) */
+/* Primario: Azul Ejecutivo */
+.btn-primary, .btn-dark, input[type="submit"], #formMensaje button[type="submit"], #formLectura button[type="submit"] {
+  background: #1e40af !important;
+  border: 1px solid #1e40af !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.1s ease-in-out !important;
+}
+.btn-primary:hover, .btn-dark:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+}
+
+/* Secundario / Bordes */
+.btn-secondary, .btn-outline-secondary, .btn-outline-dark, .btn-light {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+}
+.btn-secondary:hover, .btn-outline-secondary:hover, .btn-outline-dark:hover {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Botón de Éxito (Verde Financiero) */
+.btn-success, .btn-warning {
+  background: #10b981 !important;
+  border: 1px solid #10b981 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+.btn-success:hover {
+  background: #059669 !important;
+}
+
+/* EFECTO CLICK REAL (Pulsación) */
+.btn:active, button:active, input[type="submit"]:active {
+  transform: scale(0.98) !important;
+  filter: brightness(0.95);
+}
+
+/* 6. BARRA DE NAVEGACIÓN PROFESIONAL */
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+.navbar-brand {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+.nav-link {
+  color: #475569 !important;
+}
+.nav-link:hover {
+  color: #1e40af !important;
+}
+
+/* 7. ALERTAS Y CONTENEDORES ESPECIALES */
+.alert-dark, .bg-dark {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+.alert-danger {
+  background-color: #fef2f2 !important;
+  border: 1px solid #fca5a5 !important;
+  color: #991b1b !important;
+}
+.alert-info {
+  background-color: #eff6ff !important;
+  border: 1px solid #bfdbfe !important;
+  color: #1e40af !important;
+}

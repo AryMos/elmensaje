@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bunker.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transacción Exitosa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5">
+    <div class="card p-5 shadow text-center" style="max-width: 600px; margin: 0 auto;">
+        <h1 class="text-success h2 mb-3">✓ Registro Resguardado</h1>
+        <p class="fs-6 text-muted">La transacción fue procesada y confirmada correctamente por la entidad de pagos.</p>
+        
+        <div class="alert alert-info my-4 p-4 text-start">
+            <h5 class="h6 fw-bold text-center mb-3">LLAVE COMPROBANTE DE CUSTODIA</h5>
+            <p class="small text-muted text-center mb-3">Compartí de forma segura esta clave alfanumérica con el destinatario. Representa el único método de validación de lectura:</p>
+            <h2 class="text-center bg-white border p-3 rounded font-monospace tracking-wide text-primary" style="letter-spacing: 3px;">
+                {% if codigo %}{{ codigo }}{% else %}X7K2M9P4LW{% endif %}
+            </h2>
+            <small class="text-muted d-block text-center mt-2">⚠️ Guardá este código en un lugar seguro antes de abandonar la sesión.</small>
+        </div>
+
+        <p class="small text-muted mb-4">Los datos ya se encuentran almacenados y cifrados de forma persistente en los servidores de resguardo.</p>
+        
+        <a href="{% url 'home' %}" class="btn btn-primary btn-lg w-100">
+            Regresar a mi Panel
+        </a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bunker.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Mensaje - Custodia Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5" style="max-width: 600px;">
+    <div class="card text-center p-4 shadow">
+        <h1 class="display-5 mb-3">🛡️ El Mensaje</h1>
+        <h2 class="h5 text-muted mb-4">Custodia segura y cifrada para tus registros más importantes.</h2>
+        
+        <p class="mb-4">
+            Resguardamos cada mensaje mediante un sistema de cifrado avanzado de extremo a extremo, garantizando confidencialidad absoluta. Tu información permanece protegida de forma íntegra y programada para ser entregada a su destinatario solo en el escenario indicado.
+        </p>
+        
+        <hr class="my-4">
+
+        {% if user.is_authenticated %}
+            <div class="mb-3">
+                <a href="{% url 'home' %}" class="btn btn-success btn-lg w-100 shadow-sm">
+                    Ir a mi Panel de Gestión Activo
+                </a>
+            </div>
+        {% endif %}
+
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-4">
+            <a href="{% url 'registro' %}" class="btn btn-primary btn-lg px-4 m-1">Registrarse</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg px-4 m-1">Iniciar Sesión</a>
+        </div>
+
+        <div class="alert alert-info text-start p-3 rounded mb-0">
+            <h6 class="fw-bold mb-2">🔑 ¿RECIBISTE UN CÓDIGO DE ACCESO?</h6>
+            <p class="small mb-3">Si sos destinatario de un mensaje legado, ingresá el código y tus datos para abrir la cápsula correspondiente.</p>
+            <a href="/leer/" class="btn btn-primary w-100 fw-bold">
+                Abrir Mensaje Custodiado
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
