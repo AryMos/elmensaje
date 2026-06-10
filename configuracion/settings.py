@@ -9,11 +9,12 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import dj_database_url
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(_file_).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,8 +26,8 @@ SECRET_KEY = 'django-insecure-iukc3!()j^eiz)*4%^%j^_h-(nvj!1$32atpt%*ty^bj&z^ix6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Permitimos que ngrok se conecte sin rebotar la petición
-ALLOWED_HOSTS = ['*', 'pager-delta-repeated.ngrok-free.dev']
+# Agregamos railway.app para que acepte las peticiones en la nube
+ALLOWED_HOSTS = ['*', 'pager-delta-repeated.ngrok-free.dev', '.railway.app']
 
 # Permitimos cargar la web dentro de los marcos si fuese necesario para ngrok
 CSRF_TRUSTED_ORIGINS = ['https://pager-delta-repeated.ngrok-free.dev']
@@ -77,6 +78,7 @@ WSGI_APPLICATION = 'configuracion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# Tu base de datos local de PostgreSQL por defecto
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -87,6 +89,10 @@ DATABASES = {
         'PORT': '5432',                  
     }
 }
+
+# Si Railway detecta la base de datos en la nube, reemplaza la configuración automáticamente
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
