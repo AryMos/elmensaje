@@ -148,7 +148,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Optimizador de WhiteNoise para comprimir y almacenar en caché el CSS de forma eficiente
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedCopyAndProcessFilesStorage'
 
 
 # Configuración para el envío de correos electrónicos (Gmail)
