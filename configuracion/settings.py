@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ['*']
 
 # Permitimos cargar la web dentro de los marcos si fuese necesario para ngrok
 CSRF_TRUSTED_ORIGINS = [
+    'https://elmensaje-production.up.railway.app'
     'https://el-mensaje-production.up.railway.app'
-    'CSRF_COOKIE_SECURE = True'
-    'SESSION_COOKIE_SECURE = True'
-    'CSRF_COOKIE_HTTPS_ONLY = True'
     'https://pager-delta-repeated.ngrok-free.dev'
     ]
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPS_ONLY = True
 
 # Application definition
 
