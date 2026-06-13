@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # ⚡ Soporte premium para servir CSS en Railway
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,11 +133,23 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
+# ==========================================================================
+# 🛡️ CONFIGURACIÓN DE ARCHIVOS ESTÁTICOS (CORREGIDA PARA EMISIÓN PREMIUM)
+# ==========================================================================
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# 🛠️ LA LÍNEA FALTANTE: Le dice a Django dónde buscar tu nuevo bunker.css original
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+# Carpeta de salida unificada para producción en Railway
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Optimizador de WhiteNoise para comprimir y almacenar en caché el CSS de forma eficiente
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Configuración para el envío de correos electrónicos (Gmail)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
