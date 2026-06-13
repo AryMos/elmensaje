@@ -261,17 +261,16 @@ def recuperar_password(request):
         email_ingresado = request.POST.get('email', '').strip()
         
         try:
-            # Buscamos directamente en tu tabla Usuario por el correo electrónico
+            # Buscamos el perfil por email
             perfil_usuario = Usuario.objects.get(email=email_ingresado)
             
-            asunto = "🔐 Recuperación de Contraseña - El Mensaje"
+            asunto = "🔐 Recuperación de Acceso - El Mensaje"
             cuerpo_mensaje = (
                 f"Hola {perfil_usuario.nombre_completo},\n\n"
                 f"Recibimos una solicitud para recordar tus credenciales de acceso a tu bóveda digital.\n\n"
-                f"Tu DNI de ingreso (Usuario): {perfil_usuario.dni}\n"
-                f"Tu contraseña registrada es: {perfil_usuario.user.password if hasattr(perfil_usuario.user, 'password') else '🔑 Contraseña Protegida'}\n\n"
-                f"Por motivos de seguridad, te recordamos mantener tus datos a resguardo.\n"
-                f"Si no solicitaste este correo, puedes ignorarlo con tranquilidad.\n\n"
+                f"Tu DNI de ingreso (Usuario): {perfil_usuario.dni}\n\n"
+                f"Por motivos de seguridad y alta encriptación, no podemos visualizar tu contraseña actual.\n"
+                f"Si no la recordás, ponete en contacto con el administrador para generar una clave temporal.\n\n"
                 f"¡Saludos de la Bóveda!\n"
                 f"El Mensaje - Custodia Digital."
             )
@@ -284,11 +283,12 @@ def recuperar_password(request):
                 fail_silently=False,
             )
         except Usuario.DoesNotExist:
-            # Si el mail no existe, pasa de largo silenciosamente por seguridad
+            # Si el mail no existe, pasa silenciosamente por seguridad
             pass
 
         messages.info(request, "Si el correo electrónico existe en nuestro sistema, se enviarán las instrucciones de recuperación de inmediato.")
         return redirect('login')
+        
     return render(request, 'usuarios/recuperar_password.html')
 
 @csrf_exempt
