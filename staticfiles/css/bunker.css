@@ -1,0 +1,191 @@
+/* ==========================================================================
+   🛡️ EL MENSAJE - CUSTODIA DIGITAL
+   Diseño de Interfaz Profesional Premium - Estilo Bóveda de Alta Seguridad
+   Desarrollador Intelectual: Ariel Santiago Mosciaro
+   ========================================================================== */
+
+/* 1. CONFIGURACIÓN GENERAL PROFESIONAL (Fondo Degradado de Alta Gama) */
+body {
+  background: linear-gradient(135deg, #0b111e 0%, #111827 50%, #1f2937 100%) !important;
+  background-attachment: fixed !important;
+  color: #f3f4f6 !important;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. TIPOGRAFÍAS Y COLORES DE TEXTO (Para elementos fuera de las tarjetas) */
+h1, h2, h3, h4, h5, h6, .display-4, .display-5, .h2, .h3 {
+  color: #ffffff !important; /* Blanco nítido para destacar sobre el fondo oscuro */
+  font-weight: 700 !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* 3. TARJETAS (Efecto Bóveda: Flotan con elegancia sobre el fondo oscuro) */
+.card, .card.shadow, .modal-content {
+  background-color: #ffffff !important; /* Se mantiene blanco adentro para un contraste perfecto */
+  border: none !important;
+  border-radius: 16px !important; /* Bordes un poco más suaves y modernos */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important; /* Sombra profunda para dar relieve real */
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Control estricto de textos DENTRO de las tarjetas para que no se pierdan */
+.card p, .card span, .card label, .card .form-label, .card .text-muted {
+  color: #374151 !important; /* Gris oscuro ultra legible sobre fondo blanco */
+}
+
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6, .card .h5 {
+  color: #0f172a !important; /* Títulos corporativos firmes dentro de la tarjeta */
+  text-shadow: none !important;
+}
+
+.card-header {
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Tablas de Datos Uniformes (Paneles de Control Internos) */
+.table {
+  color: #334155 !important;
+  background-color: #ffffff !important;
+}
+.table th {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+td, th {
+  border-color: #e2e8f0 !important;
+}
+
+/* 4. COMPONENTES DE FORMULARIO (Inputs Modernos) */
+input[type="text"], input[type="email"], input[type="password"], datetime-local, textarea, select, .form-control, .form-select {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+input:focus, textarea:focus, select:focus, .form-control:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+  outline: none !important;
+}
+
+/* 5. BOTONES CORPORATIVOS (Mantenemos tu efecto mecánico táctil) */
+.btn-primary, .btn-dark, input[type="submit"], #formMensaje button[type="submit"], #formLectura button[type="submit"] {
+  background: #2563eb !important; /* Un azul un toque más vivo y moderno */
+  border: 1px solid #2563eb !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2) !important;
+  transition: all 0.1s ease-in-out !important;
+}
+.btn-primary:hover, .btn-dark:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+}
+
+.btn-secondary, .btn-outline-secondary, .btn-outline-dark, .btn-light {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+}
+.btn-secondary:hover, .btn-outline-secondary:hover, .btn-outline-dark:hover {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.btn-success, .btn-warning {
+  background: #10b981 !important;
+  border: 1px solid #10b981 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+.btn-success:hover {
+  background: #059669 !important;
+}
+
+.btn:active, button:active, input[type="submit"]:active {
+  transform: scale(0.98) !important;
+  filter: brightness(0.95);
+}
+
+/* 6. BARRA DE NAVEGACIÓN PROFESIONAL */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+.navbar-brand {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+.nav-link {
+  color: #475569 !important;
+}
+.nav-link:hover {
+  color: #2563eb !important;
+}
+
+/* 7. ALERTAS Y CONTENEDORES ESPECIALES */
+.alert-dark, .bg-dark {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+.alert-danger {
+  background-color: #fef2f2 !important;
+  border: 1px solid #fca5a5 !important;
+  color: #991b1b !important;
+}
+.alert-info {
+  background-color: #eff6ff !important;
+  border: 1px solid #bfdbfe !important;
+  color: #1e40af !important;
+}
+/* Forzamos el texto interno de alertas */
+.alert-info p, .alert-info h6, .alert-info small {
+  color: #1e40af !important;
+}
+
+/* ==========================================================================
+   ✨ 8. SECCIÓN DE CRÉDITOS Y FOOTER PROFESIONAL (FIRMA CORPORATIVA)
+   ========================================================================== */
+.footer-desarrollo {
+  background-color: rgba(15, 23, 42, 0.7) !important;
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 20px 0;
+  margin-top: auto; /* Empuja el footer abajo de todo si hay poco contenido */
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-desarrollo p {
+  color: #9ca3af !important; /* Gris claro suave para el pie de página */
+  margin-bottom: 4px !important;
+}
+
+.footer-desarrollo .marca-registrada {
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-desarrollo .autor {
+  color: #3b82f6 !important; /* Resalta tu nombre en un azul tecnológico */
+  font-weight: 600;
+}
