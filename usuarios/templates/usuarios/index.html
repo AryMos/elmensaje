@@ -10,16 +10,47 @@
 </head>
 <body>
 
-<div class="container my-5" style="max-width: 600px;">
-    <div class="card text-center p-4 shadow">
-        <h1 class="display-5 mb-3">🛡️ El Mensaje</h1>
-        <h2 class="h5 text-muted mb-4">Custodia segura y cifrada para tus registros más importantes.</h2>
+<div class="container my-5" style="max-width: 650px;">
+    <div class="card p-4 shadow">
+        <div class="text-center">
+            <h1 class="display-5 mb-2">🛡️ El Mensaje</h1>
+            <h2 class="h5 text-muted mb-4">Bóveda segura de mensajes encriptados</h2>
+            
+            <p class="mb-4">
+                Resguardamos tus palabras más importantes mediante un sistema de cifrado avanzado de extremo a extremo, garantizando confidencialidad absoluta. Tu información permanece protegida de forma íntegra y programada para ser entregada solo cuando se cumplan las condiciones indicadas.
+            </p>
+        </div>
+
+        <hr class="my-3">
+
+        <h4 class="h5 fw-bold mb-3 text-center text-primary">Nuestras Funciones de Custodia</h4>
         
-        <p class="mb-4">
-            Resguardamos cada mensaje mediante un sistema de cifrado avanzado de extremo a extremo, garantizando confidencialidad absoluta. Tu información permanece protegida de forma íntegra y programada para ser entregada a su destinatario solo en el escenario indicado.
-        </p>
-        
-        <hr class="my-4">
+        <div class="row g-3 mb-4">
+            <div class="col-12">
+                <div class="p-3 border rounded bg-light">
+                    <h5 class="h6 fw-bold mb-1">📅 1. Mensaje Programado</h5>
+                    <p class="small text-muted mb-0">
+                        Escribí hoy y configurá una *fecha y hora exacta de apertura* junto a un código de seguridad. El mensaje permanecerá sellado bajo llave en la bóveda y solo se podrá abrir y leer una vez cumplido el plazo establecido.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <div class="p-3 border rounded bg-light">
+                    <h5 class="h6 fw-bold mb-1">🕊️ 2. Función Post Mortem (Fe de Vida)</h5>
+                    <p class="small text-muted mb-0">
+                        Un sistema inteligente de resguardo. Podés elegir un intervalo de verificación (*30 días, 60 días o hasta 1 año*). El sistema te enviará avisos por mail periódicamente; si por alguna razón no activás tu fe de vida en el plazo elegido, la bóveda se habilitará automáticamente para tus destinatarios.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-warning bg-light p-3 mb-4 text-center">
+            <h5 class="h6 fw-bold text-warning-dark mb-1">💳 Valor del Servicio</h5>
+            <p class="small mb-0">
+                Cada mensaje tiene un costo único de *$5.000* para ser encriptado de forma permanente. Una vez abonado, queda resguardado de por vida y *podrás editar su contenido todas las veces que quieras* sin costos extras.
+            </p>
+        </div>
 
         {% if user.is_authenticated %}
             <div class="mb-3">
@@ -34,9 +65,11 @@
             <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg px-4 m-1">Iniciar Sesión</a>
         </div>
 
-        <div class="alert alert-info text-start p-3 rounded mb-0">
+        <div class="alert alert-info p-3 rounded mb-0">
             <h6 class="fw-bold mb-2">🔑 ¿RECIBISTE UN CÓDIGO DE ACCESO?</h6>
-            <p class="small mb-3">Si sos destinatario de un mensaje legado, ingresá el código y tus datos para abrir la cápsula correspondiente.</p>
+            <p class="small mb-3">
+                *Leer tus mensajes no tiene ningún costo.* Si sos el propietario o destinatario de un mensaje, solo necesitás ingresar el código. Recordá que si es un mensaje programado, la "bóveda" solo se abrirá una vez cumplida la fecha de liberación.
+            </p>
             <a href="/leer/" class="btn btn-primary w-100 fw-bold">
                 Abrir Mensaje Custodiado
             </a>
