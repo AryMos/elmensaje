@@ -27,10 +27,13 @@ SECRET_KEY = 'django-insecure-iukc3!()j^eiz)*4%^%j^_h-(nvj!1$32atpt%*ty^bj&z^ix6
 DEBUG = True
 
 # Agregamos railway.app para que acepte las peticiones en la nube
-ALLOWED_HOSTS = ['*', 'pager-delta-repeated.ngrok-free.dev', '.railway.app']
+ALLOWED_HOSTS = ['*']
 
 # Permitimos cargar la web dentro de los marcos si fuese necesario para ngrok
-CSRF_TRUSTED_ORIGINS = ['https://pager-delta-repeated.ngrok-free.dev']
+CSRF_TRUSTED_ORIGINS = [
+    'https://el-mensaje-production.up.railway.app'
+    'https://pager-delta-repeated.ngrok-free.dev'
+    ]
 
 
 # Application definition
