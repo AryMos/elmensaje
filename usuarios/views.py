@@ -258,10 +258,38 @@ def login_usuario(request):
 
 def recuperar_password(request):
     if request.method == 'POST':
-        messages.info(request, "Si el DNI existe, se enviarán las instrucciones de recuperación.")
+        email_ingresado = request.POST.get('email', '').strip()
+        
+        try:
+            # Buscamos directamente en tu tabla Usuario por el correo electrónico
+            perfil_usuario = Usuario.objects.get(email=email_ingresado)
+            
+            asunto = "🔐 Recuperación de Contraseña - El Mensaje"
+            cuerpo_mensaje = (
+                f"Hola {perfil_usuario.nombre_completo},\n\n"
+                f"Recibimos una solicitud para recordar tus credenciales de acceso a tu bóveda digital.\n\n"
+                f"Tu DNI de ingreso (Usuario): {perfil_usuario.dni}\n"
+                f"Tu contraseña registrada es: {perfil_usuario.user.password if hasattr(perfil_usuario.user, 'password') else '🔑 Contraseña Protegida'}\n\n"
+                f"Por motivos de seguridad, te recordamos mantener tus datos a resguardo.\n"
+                f"Si no solicitaste este correo, puedes ignorarlo con tranquilidad.\n\n"
+                f"¡Saludos de la Bóveda!\n"
+                f"El Mensaje - Custodia Digital."
+            )
+            
+            send_mail(
+                asunto,
+                cuerpo_mensaje,
+                'El Mensaje <notificaciones.elmensaje@gmail.com>',
+                [perfil_usuario.email],
+                fail_silently=False,
+            )
+        except Usuario.DoesNotExist:
+            # Si el mail no existe, pasa de largo silenciosamente por seguridad
+            pass
+
+        messages.info(request, "Si el correo electrónico existe en nuestro sistema, se enviarán las instrucciones de recuperación de inmediato.")
         return redirect('login')
     return render(request, 'usuarios/recuperar_password.html')
-
 
 @csrf_exempt
 def api_editar_mensaje(request):
