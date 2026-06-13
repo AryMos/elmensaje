@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 
 # Permitimos cargar la web dentro de los marcos si fuese necesario para ngrok
 CSRF_TRUSTED_ORIGINS = [
-    'https://el-mensaje-production.up.railway.app'
+    'https://el-mensaje-production.up.railway.app',
     'https://elmensaje-production.up.railway.app'
     'https://pager-delta-repeated.ngrok-free.dev'
     ]
